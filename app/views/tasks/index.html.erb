@@ -1,0 +1,32 @@
+<div class="container">
+
+<h1>Tasks</h1>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><strong><%= task.title %></strong><br><%= task.notes %></td>
+        <td><%= task.created_at %></td>
+        <td>
+          <%= link_to('', task, class: 'glyphicon glyphicon-eye-open') %>
+          <%= link_to('', edit_task_path(task), class: 'glyphicon glyphicon-pencil') %>
+          <%= link_to '', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to('New Task', new_task_path, class: 'btn btn-primary') %>
+</div>

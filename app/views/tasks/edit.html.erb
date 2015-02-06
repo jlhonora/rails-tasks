@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Editing Task</h1>
+
+  <%= render 'form' %>
+
+  <div class="form-group">
+    <div class="col-md-2">
+      <%= button_to 'Show', task_path(@task), class: 'btn btn-default col-md-6', method: :get %>
+      <%= button_to 'Back', tasks_path, class: 'btn btn-primary col-md-6', method: :get %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+<div id="notice" class="alert alert-warning"><%= notice %></div>
+
+<h1><%= @task.title %></h1>
+
+<p>
+  <%= @task.notes %>
+</p>
+
+  <div class="form-group">
+    <div class="col-md-2">
+      <p>
+        <%= button_to 'Back', tasks_path, class: 'btn btn-default col-md-6', method: :get %>
+        <%= button_to 'Edit', edit_task_path(@task), class: 'btn btn-primary col-md-6', method: :get %>
+      </p>
+    </div>
+  </div>
+</div>
